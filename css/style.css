@@ -223,3 +223,11 @@ por ser de esta seccion se esta repitiendo*/
 .Curso__info {
     font-size: 2rem;
 }
+
+/* CONTACTO */
+.contacto-bg {
+    background-image: url(../img/contacto.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
