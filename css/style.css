@@ -189,3 +189,37 @@ img {
         column-gap: 2rem;
     }
 }
+
+/* CURSOS */
+.curso {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+}
+@media (min-width: 768px) {
+    .curso {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+    
+}
+
+.curso:last-of-type {
+    border: none;
+}
+
+/* Este codigo es el mismo de widget-curso y se deberia poner en coma despues de arriba
+por ser de esta seccion se esta repitiendo*/
+.curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+
+}
+.Curso__info {
+    font-weight: normal;
+}
+
+.curso__label,
+.Curso__info {
+    font-size: 2rem;
+}
