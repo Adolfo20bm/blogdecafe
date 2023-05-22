@@ -88,16 +88,45 @@ mensaje.addEventListener('input', leerTexto);
 formulario.addEventListener('submit', function(evento){
     evento.preventDefault();
     // Validar el formulario
+    const {nombre, email, mensaje} = datos;
+    if(nombre === '' || email === '' || mensaje === ''){
+        mostrarError('Todos los campos son obligatorios');
 
-    // Enviar el formulario
+        return; // Corta la ejecucion del codigo
+    }
+    
+    // Crear la alerta de Enviar correctamente
+        mostrarEnvio('Mensaje enviado correctamente');
 });
 
 function leerTexto(e){
     // console.log(e.target.value);
     datos[e.target.id]=e.target.value;
-    console.log(datos);
+    // console.log(datos);
 }
 
+// Muestra un error en pantalla
+function mostrarError(mensaje){
+    const error = document.createElement('P');
+    error.textContent = mensaje;
+    error.classList.add('error');
+    formulario.appendChild(error);
 
+    // Desaparesca despues de 5 segundos
+    setTimeout(()=> {
+        error.remove();
+    },3000);
+}
 
+// Muestra mensaje enviado
+function mostrarEnvio(mensaje){
+    const envio = document.createElement('P');
+    envio.textContent = mensaje;
+    envio.classList.add('envio');
+    formulario.appendChild(envio);
 
+    // Desaparesca despues de 5 segundos
+    setTimeout(()=> {
+        envio.remove();
+    },5000);
+}
